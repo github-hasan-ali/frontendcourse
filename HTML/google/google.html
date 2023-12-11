@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="google.ico" type="image/x-icon" />
+
+
+    <title>Google</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        .header {
+            /*position: fixed;
+            left: 0;
+            width: 100%;
+            text-align: right;*/
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-top: 5px;
+        }
+
+        .header a {
+            margin-right: 17px;
+        }
+
+        .header a:last-child {
+            margin-right: 7px;
+        }
+
+        .mavibtn {
+            text-decoration: none;
+            display: inline-block;
+
+            padding: 10px 26px 10px 26px;
+            background-color: #1a73e8;
+            border-radius: 4px;
+            color: white;
+            font-size: 14px;
+            font-weight: 400;
+
+
+        }
+
+        .mavibtn:hover {
+            background-color: #175cb7;
+        }
+
+        .txtbtn {
+            text-decoration: none;
+            color: black;
+            font-size: 13px;
+        }
+
+        .txtbtn:hover {
+            text-decoration: underline;
+        }
+
+        .searchbar {
+            /*position: absolute;
+            top: 38%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+          
+
+        }
+        .searchbarbox{
+            width: 600px;
+            height: 300px;
+            background-color: beige;
+        }
+
+        .logobottom {
+            margin-bottom: 20px;
+        }
+
+        .searchbar form input {
+            width: 582px;
+            height: 49px;
+            border: 1px solid #dfe1e5;
+            border-radius: 40px;
+            padding-left: 50px;
+            font-size: 21px;
+            font-weight: 100;
+        }
+
+        .searchbar form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .formbtn {
+            font-size: 14px;
+            padding: 7px 10px;
+            border-radius: 4px;
+            border: none;
+            margin-right: 10px;
+
+        }
+
+        .app {
+            text-decoration: none;
+            border-radius: 50%;
+            padding: 5px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .app:hover {
+            background-color: rgb(239, 239, 239);
+        }
+
+        .app img {
+            opacity: 0.7;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: lightgray;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a class="txtbtn" href="#">Gmail</a>
+        <a class="txtbtn" href="#">Görseller</a>
+        <a class="app" href="#">
+            <img src="https://ssl.gstatic.com/gb/images/bar/al-icon.png" alt="">
+        </a>
+        <a class="mavibtn" href="#">Oturum açın</a>
+    </div>
+    <div class="searchbar">
+        <div class="searchbarbox">
+        <img class="logobottom" width="272px"
+            src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="logo">
+        <form action="">
+            <input type="search">
+        </form>
+        <input class="formbtn" type="button" value="Google'da Ara">
+        <input class="formbtn" type="button" value="Kendimi Şanslı Hissediyorum">
+    </div>
+    </div>
+    <div class="footer">
+        <p>Türkiye</p>
+        <a href="#">Hakkında</a>
+        <a href="#">Reklan</a>
+        <a href="#">İşletme</a>
+        <a href="#">Arama nasıl çalışır?</a>
+        <a href="#"><img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC"
+                alt="">İklimle ilgili çalışmalarımızın üçüncü on yılı</a>
+        <a href="#">Gizlilik</a>
+        <a href="#">Şartlar</a>
+        <a href="#">Ayarlar</a>
+    </div>
+</body>
+
+</html>

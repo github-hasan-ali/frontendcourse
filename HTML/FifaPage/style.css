@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #E4E8F0;
+}
+
+.header-up{
+    width: 100%;
+    padding: 6px;
+    text-align: end;
+    border-bottom: 1px solid rgba(255, 255, 255, .6);
+}
+
+.header-up a{
+    font-size: 12px;
+    padding-right: 24px;
+}
+
+#menu,nav{
+    background-color: rgb(4, 86, 148);
+}
+
+#menu img{
+    width: 104px;
+}
+
+#menu a{
+    margin-right: 32px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+#menu{
+    padding: 15px;
+}
+
+.menu-right{
+    float: right;
+    padding: 7.745px;
+}
+
+#main-left{
+    color: #fff;
+    width: 25%;
+    height: 576px;
+    vertical-align: top;
+    background-image: url(img/General-Ticketing-Promo-Box-DT.webp);
+    background-size: cover;
+    text-align: center;
+    padding: 16px;
+    float: left;
+}
+
+#main-left *{
+    margin-bottom: 24px;
+}
+
+#main-left h2{
+    margin-top: 41%;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 45px;
+}
+
+#main-left span{
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    padding: 15px 0;
+}
+
+#main-right{
+    width: 75%;
+    display: inline-block;
+    height: 576px;
+    overflow: hidden;
+    vertical-align:top;
+    position: relative;
+
+}
+
+#main-right img{
+    width: 100%;
+    
+
+}
+
+#main-right div{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    padding: 40px 30% 40px 40px;
+    width: 100%;
+    background: rgb(2,7,70);
+    background: linear-gradient(0deg, rgba(2,7,70,0.6167060574229692) 20%, rgba(0,0,0,0) 100%);
+}
+
+#main-right h1{
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+#main-right span{
+    line-height: 20px;
+}
+
+.ticket-btn{
+    background: linear-gradient(111.98deg,#00b8ff 18.07%,#1574c4 90.31%);
+    padding: 11.5px 45px;
+    display: inline-block;
+    border-radius: 30px;
+    transition: ease-in-out .2s;
+}
+
+.ticket-btn:hover{
+    transform: scale(1.1);
+}
+
