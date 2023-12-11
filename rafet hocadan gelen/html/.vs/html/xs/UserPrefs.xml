@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{75405589-9F0B-4914-825B-CE72E1480152}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="html/Search.html">
+    <Files>
+      <File FileName="html/EmptyHtmlFile.html" Line="50" Column="1" />
+      <File FileName="html/site.css" Line="152" Column="1" />
+      <File FileName="html/Search.html" Line="31" Column="29" />
+      <File FileName="html/Controllers/HomeController.cs" Line="18" Column="1" />
+      <File FileName="html/Program.cs" Line="1" Column="1" />
+      <File FileName="html/Models/ErrorViewModel.cs" Line="4" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="html" expanded="True">
+            <Node name="html" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Search.html" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.html PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+</Properties>

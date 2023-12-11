@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Title</title>
+    <script>
+        function InputChanged()
+        {
+            var titleTextButton = document.getElementById("textInput");
+            var titleText = titleTextButton.value;
+
+            var ttArray = titleText.split('');
+            ttArray = ttArray.reverse();
+            titleTextButton.value = ttArray.join('');
+        }
+        function ChangeTitle()
+        {
+            var titleTextButton = document.getElementById("titleButton");
+            var titleText = titleTextButton.innerText;
+
+            var ttArray = titleText.split('');
+            ttArray = ttArray.reverse();
+            titleTextButton.innerText = ttArray.join('');
+        }
+    </script>
+</head>
+<body>
+    <button id="titleButton" onclick="InputChanged(),ChangeTitle()">Başlık değiştir</button>
+    <form>
+        <input id="textInput" type="text" value="patates" onchange="InputChanged()" />
+        <input type="text" />
+    </form>
+
+</body>
+</html>
