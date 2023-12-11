@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>search</title>
+    <script>
+      function inputChanged() {
+        //alert("function");
+        //1. access title
+        //2. Reverse title
+        //3. Update title
+
+        alert("change title");
+        var titleText = document.title;
+        alert(titleText);
+
+        var ttArray = titleText.split("");
+        ttArray = ttArray.reverse();
+        document.title = ttArray.join("");
+      }
+    </script>
+  </head>
+  <body>
+    <form action="" method="post">
+      <input type="text" onchange="inputChanged()" />
+    </form>
+
+    <div>API list</div>
+    <a href="https://github.com/public-apis/public-apis">https://github.com/public-apis/public-apis</a>
+  </body>
+</html>
