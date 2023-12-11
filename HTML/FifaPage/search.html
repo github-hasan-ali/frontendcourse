@@ -19,10 +19,14 @@
         ttArray = ttArray.reverse();
         document.title = ttArray.join("");
       }
+
     </script>
   </head>
   <body>
+
+    iki input olacak birine yazılan diğerinede yazılacak
     <form action="" method="post">
+      <button id="titleButton" onclick="inputChanged"></button>
       <input type="text" onchange="inputChanged()" />
     </form>
 
