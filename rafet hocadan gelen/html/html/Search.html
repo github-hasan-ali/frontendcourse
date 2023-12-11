@@ -22,13 +22,19 @@
             ttArray = ttArray.reverse();
             titleTextButton.innerText = ttArray.join('');
         }
+        document.addEventListener("input",function valueDegistir(){
+            
+            var durum = document.getElementById("textInput").value;
+            document.getElementById("degissin").value = durum;
+        })
+        
     </script>
 </head>
 <body>
     <button id="titleButton" onclick="InputChanged(),ChangeTitle()">Başlık değiştir</button>
     <form>
-        <input id="textInput" type="text" value="patates" onchange="InputChanged()" />
-        <input type="text" />
+        <input id="textInput" type="text" value="" />
+        <input id="degissin" value="" type="text" onchange="valueDegistir()"/>
     </form>
 
 </body>
