@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Title</title>
+    <script>
+
+        function InputChanged(titleText)
+        {
+            var entryInput = document.getElementById("entry");
+            var ttArray = titleText.split('');
+            var clickButton = document.getElementById("dugme");
+
+            ttArray = ttArray.reverse();
+            entryInput.value = ttArray.join('');
+            if (titleText == "domates")
+            {
+                clickButton.click();
+            }
+        }
+        function ChangeTitle()
+        {
+            var titleTextButton = document.getElementById("titleButton");
+            var titleText = titleTextButton.innerText;
+
+            var ttArray = titleText.split('');
+            ttArray = ttArray.reverse();
+            titleTextButton.innerText = ttArray.join('');
+            Stop();
+        }
+        function Stop(e)
+        {
+            alert("submit");
+            var entryInput = document.getElementById("entry");
+
+            if (entryInput.value == "pata")
+            {
+                e.preventDefault();
+            }
+        }
+        function AddButton(orgButton)
+        {
+            var button = document.createElement("button");
+
+            button.innerText = "YENİ BUTTON";
+            button.setAttribute("onclick", "AddButton(this)");
+            button.id = "dugme";
+            document.body.appendChild(button);
+            orgButton.remove();
+            var patates = document.getElementById("potato");
+
+            patates.value = "domates";
+            patates.oninput();
+            
+        }
+        function SelectChanged()
+        {
+            var patates = document.getElementById("potato");
+
+            patates.value = "domates";
+            patates.oninput();
+        }
+        function ColorChanged(color)
+        {
+            var patates = document.getElementById("potato");
+
+            patates.style.color = color;
+        }
+    </script>
+</head>
+<body>
+    <button id="dugme" onclick="AddButton(this)">Düğme ekle</button>
+    <form action="https://www.google.com" onsubmit="Stop(event)" id="mainForm">
+        <input id="potato" type="text" value="patates" oninput="InputChanged(this.value)" />
+        <input type="text" id="entry" />
+        <input type="button" value="DÜĞME" />
+        <input type="submit" value="TAMAM" id="submitButton" />
+        <input type="reset" value="İPTAL" />
+        <br />
+        <label>T. C. Vatandaşıyım</label>
+        <input type="checkbox" checked />
+        <textarea>Adres</textarea>
+        <select onchange="SelectChanged()">
+            <option>abc</option>
+            <option>def</option>
+        </select>
+        <input type="tel" />
+        <input type="email" />
+        <input type="datetime-local" />
+        <input type="file" />
+        <input type="hidden" value="gizli" />
+        <input type="number" />
+        <br />
+        <input type="radio" name="abc" checked />
+        <input type="radio" name="abc" />
+        <br />
+        <input type="radio" name="def" />
+        <input type="radio" name="def" />
+        <input type="radio" name="def" />
+        <input type="color" oninput="ColorChanged(this.value)" />
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Tarih</th>
+                <th>Miktar</th>
+                <th>Fiyat</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var i = 0;
+        function abc()
+        {
+            i = 8;
+        }
+    </script>
+</body>
+
+</html>

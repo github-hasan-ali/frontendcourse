@@ -1,41 +1,62 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Title</title>
     <script>
-        function InputChanged()
-        {
-            var titleTextButton = document.getElementById("textInput");
-            var titleText = titleTextButton.value;
+      function InputChanged() {
+        var titleTextButton = document.getElementById("textInput");
+        var titleText = titleTextButton.value;
 
-            var ttArray = titleText.split('');
-            ttArray = ttArray.reverse();
-            titleTextButton.value = ttArray.join('');
+        // var ttArray = titleText.split("");
+        // ttArray = ttArray.reverse();
+        // titleTextButton.value = ttArray.join("");
+        if (titleText=="domates"){
+            // alert("aaaaaaaaaa")
+            document.getElementById("eklemebutonu").click();
         }
-        function ChangeTitle()
-        {
-            var titleTextButton = document.getElementById("titleButton");
-            var titleText = titleTextButton.innerText;
+      }
+      
+      function ChangeTitle() {
+        var titleTextButton = document.getElementById("titleButton");
+        var titleText = titleTextButton.innerText;
 
-            var ttArray = titleText.split('');
-            ttArray = ttArray.reverse();
-            titleTextButton.innerText = ttArray.join('');
-        }
-        document.addEventListener("input",function valueDegistir(){
-            
-            var durum = document.getElementById("textInput").value;
-            document.getElementById("degissin").value = durum;
-        })
-        
+        var ttArray = titleText.split("");
+        ttArray = ttArray.reverse();
+        titleTextButton.innerText = ttArray.join("");
+      }
+      document.addEventListener("input", function valueDegistir() {
+        var durum = document.getElementById("textInput").value;
+        document.getElementById("degissin").value = durum;
+      });
+
+      function addButton(orgButton) {
+        var x = document.createElement("BUTTON");
+        var t = document.createTextNode("Click me");
+        x.appendChild(t);
+        document.body.appendChild(x);
+        x.setAttribute("onclick", "addButton(this)");
+        orgButton.remove();
+        //document.getElementById("eklemebutonu").disabled = true;
+        //document.getElementById("eklemebutonu").removeAttribute("onclick");
+        //document.getElementsByTagName("button:last-child").removeAttribute("onclick");
+      }
+    //   function stop(e){
+    //     alert("submit");
+    //     var entryInput =docume
+    //   }
+
+    //
     </script>
-</head>
-<body>
-    <button id="titleButton" onclick="InputChanged(),ChangeTitle()">Başlık değiştir</button>
+  </head>
+  <body>
+    <button id="titleButton" onclick="InputChanged(),ChangeTitle()">
+      Başlık değiştir
+    </button>
     <form>
-        <input id="textInput" type="text" value="" />
-        <input id="degissin" value="" type="text" onchange="valueDegistir()"/>
+      <input id="textInput" type="text" value=""  oninput="InputChanged()"/>
+      <input id="degissin" value="" type="text" onchange="" />
     </form>
-
-</body>
+    <button id="eklemebutonu" onclick="addButton(this)">BEN BUTONUM</button>
+  </body>
 </html>

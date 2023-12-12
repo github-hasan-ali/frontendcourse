@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //datetime lar tarih saat arasındaki farkı hesaplayacak eğer 48 saatten büyükse kırmızı olacak
+      // startdate ve enddate sayfanın yüklendiği tarih ve saati gösterelim
+      var now = new Date();
+      now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+      document.getElementById("startDate").value = now.toISOString().slice(0, 16);
+    </script>
+  </head>
+  <body>
+    <form action="">
+      <input id="startDate" type="datetime-local" oninput="DateChanged()" />
+      <input id="endDate" type="datetime-local" oninput="DateChanged()" />
+    </form>
+    <span id="difference">Fark Tarih Saat</span>
+  </body>
+</html>
