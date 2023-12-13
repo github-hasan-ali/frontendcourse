@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hour Difference</title>
+  </head>
+  <body>
+    <label for="date1">Date 1:</label>
+    <input type="datetime-local" id="date1" required />
+
+    <label for="date2">Date 2:</label>
+    <input type="datetime-local" id="date2" required />
+
+    <button onclick="calculateHourDifference()">
+      Calculate Hour Difference
+    </button>
+
+    <p id="hourDifference"></p>
+
+    <script>
+      function calculateHourDifference() {
+        // Get the values of the datetime-local inputs
+        const date1Value = document.getElementById("date1").value;
+        const date2Value = document.getElementById("date2").value;
+
+        // Convert the string values to Date objects
+        const date1 = new Date(date1Value);
+        const date2 = new Date(date2Value);
+
+        // Calculate the time difference in milliseconds
+        const timeDifference = Math.abs(date2 - date1);
+
+        // Convert milliseconds to hours
+        const hourDifference = timeDifference / (1000 * 60 * 60);
+
+        // Display the result in the <p> element
+        document.getElementById("hourDifference").textContent =
+          "Hour Difference: " + hourDifference.toFixed(2) + " hours";
+      }
+    </script>
+  </body>
+</html>

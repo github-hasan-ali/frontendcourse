@@ -1,0 +1,81 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        //function vericek(){
+       // $("#vericek").load("https://jsonplaceholder.typicode.com/todos");
+       
+
+   // }
+
+   // function vericek() {
+        
+    // API endpoint
+    //var apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+        
+    // AJAX isteği yapma
+//     $.ajax({
+//         url: apiUrl,
+//         method: 'GET',
+//         dataType: 'json',
+//         success: function (data) {
+//             // Tabloya veri eklemek için bir döngü kullanın
+            
+            
+//             $.each(data, function (index, item) {
+//                 var row = '<tr>' +
+//                     '<td>' + item.id + '</td>' +
+//                     '<td>' + item.title + '</td>' +
+//                     '<td>' + item.userId + '</td>' +
+//                     '<td>' + item.completed + '</td>' +
+//                     '</tr>';
+//                 $('#myTable tbody').append(row);
+//             });
+//         },
+//         error: function (error) {
+//             console.error('Error fetching data:', error);
+//         }
+//     });
+//     console.log(jsondata);
+// }
+function fillTable(data){
+   for (let i = 0; i<data.length; i++){
+    var row = '<tr>' +
+                    '<td>' + data[i].id + '</td>' +
+                    '<td>' + data[i].title + '</td>' +
+                    '<td>' + data[i].userId + '</td>' +
+                    '<td>' + data[i].completed + '</td>' +
+                    '</tr>';
+                $('#myTable tbody').append(row);
+   }
+   console.log(data)
+}
+function vericek_yeni(){
+    $.get("https://jsonplaceholder.typicode.com/todos", fillTable, "json");
+}
+    </script>
+</head>
+<body>
+    <button id="" onclick="vericek_yeni()">veriçek</button>
+    <div id="vericek"></div>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Completed</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    
+</body>
+</html>
