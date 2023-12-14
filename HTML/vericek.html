@@ -44,36 +44,37 @@
 //     console.log(jsondata);
 // }
 function fillTable(data){
-   for (let i = 0; i<data.length; i++){
+   for (let i = 0; i<100; i++){
     var row = '<tr>' +
                     '<td>' + data[i].id + '</td>' +
                     '<td>' + data[i].title + '</td>' +
                     '<td>' + data[i].userId + '</td>' +
                     '<td>' + data[i].completed + '</td>' +
                     '</tr>';
-                $('#myTable tbody').append(row);
+                $('#vericek').append(row);
    }
-   console.log(data)
 }
-function vericek_yeni(){
-    $.get("https://jsonplaceholder.typicode.com/todos", fillTable, "json");
+function vericek_yeni(veri){
+    $.get("https://jsonplaceholder.typicode.com/"+veri, fillTable, "json");
 }
     </script>
 </head>
 <body>
-    <button id="" onclick="vericek_yeni()">veriçek</button>
+    <button id="" onclick="vericek_yeni('posts')">Posts</button>
+    <button id="" onclick="vericek_yeni('comments')">Comments</button>
+    <button id="" onclick="vericek_yeni('albums')">Albums</button>
+    <button id="" onclick="vericek_yeni('photos')">Photos</button>
+    <button id="" onclick="vericek_yeni('todos')">Todos</button>
+    <button id="" onclick="vericek_yeni('users')">Users</button>
     <div id="vericek"></div>
     <table id="myTable">
         <thead>
-            <tr>
-                <th>User Id</th>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Completed</th>
+            <tr id="tablohead">
+
             </tr>
         </thead>
-        <tbody>
-
+        <tbody id="tablobody">
+            
         </tbody>
     </table>
     

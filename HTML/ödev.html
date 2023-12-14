@@ -1,4 +1,74 @@
-json place holder data modellerinin
+<!-- json place holder data modellerinin
 sitede menü olacak menü itemleri 6 tane olacak ne kadar veri varsa
 her menü altındaki verilerin 100 adet gelecek
 resimleri thumbnail leri görünecek büyük resim görünecek
+datatables.net güzel bir data eklentisi
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+    
+
+      function fillTable(data) {
+        var photos="photos";
+        document.getElementById("tablohead").innerHTML = "";
+        document.getElementById("tablobody").innerHTML = "";
+        var row = Object.keys(data[0]);
+        for (let i = 0; i < row.length; i++) {
+            var th = document.createElement("th");
+            th.textContent=row[i];
+            
+            document.getElementById("tablohead").appendChild(th);
+
+            
+        }
+        for (let i = 0; i < data.length; i++) {
+          var tr = document.createElement("tr");
+          for (let j = 0; j < row.length; j++) {
+            var td = document.createElement("td");
+            td.textContent = data[i][row[j]];
+           
+            tr.appendChild(td);
+          }
+          $("#tablobody").append(tr);
+        }
+      }
+      function vericek_yeni(veri) {
+
+        $.get(
+          "https://jsonplaceholder.typicode.com/" + veri,
+          fillTable,
+          "json"
+        );
+      
+      }
+    </script>
+  </head>
+  <body>
+    <button id="" onclick="vericek_yeni('posts')">Posts</button>
+    <button id="" onclick="vericek_yeni('comments')">Comments</button>
+    <button id="" onclick="vericek_yeni('albums')">Albums</button>
+    <button id="" onclick="vericek_yeni('photos')">Photos</button>
+    <button id="" onclick="vericek_yeni('todos')">Todos</button>
+    <button id="" onclick="vericek_yeni('users')">Users</button>
+    <div id="vericek"></div>
+
+    <table id="myTable">
+      <thead>
+        <tr id="tablohead"></tr>
+      </thead>
+      <tbody id="tablobody"></tbody>
+    </table>
+  </body>
+</html>
