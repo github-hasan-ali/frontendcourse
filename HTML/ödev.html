@@ -11,6 +11,11 @@ datatables.net güzel bir data eklentisi
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .clickable-row {
+        cursor: pointer;
+      }
+    </style>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -18,41 +23,63 @@ datatables.net güzel bir data eklentisi
     ></script>
 
     <script>
-    
-
+      let nameData;
       function fillTable(data) {
-        var photos="photos";
         document.getElementById("tablohead").innerHTML = "";
         document.getElementById("tablobody").innerHTML = "";
         var row = Object.keys(data[0]);
         for (let i = 0; i < row.length; i++) {
-            var th = document.createElement("th");
-            th.textContent=row[i];
-            
-            document.getElementById("tablohead").appendChild(th);
-
-            
+          var th = document.createElement("th");
+          th.textContent = row[i];
+          document.getElementById("tablohead").appendChild(th);
+          
         }
         for (let i = 0; i < data.length; i++) {
           var tr = document.createElement("tr");
           for (let j = 0; j < row.length; j++) {
-            var td = document.createElement("td");
-            td.textContent = data[i][row[j]];
-           
-            tr.appendChild(td);
+            if (nameData == "photos") {
+              tr.classList.add("clickable-row");
+              tr.setAttribute("onclick", `yeniSayfaimg(\"${data[i].url}\")`);
+              if (row[j] == "thumbnailUrl") {
+                var td = document.createElement("td");
+                var img = document.createElement("img");
+                //img.setAttribute("src", );
+                img.src = data[i][row[j]];
+                td.appendChild(img);
+                tr.appendChild(td);
+              } else {
+                var td = document.createElement("td");
+                td.textContent = data[i][row[j]];
+                tr.appendChild(td);
+              }
+            } else 
+            {
+              var td = document.createElement("td");
+              td.textContent = data[i][row[j]];
+              tr.appendChild(td);
+            }
           }
           $("#tablobody").append(tr);
         }
       }
       function vericek_yeni(veri) {
-
+        nameData = veri;
         $.get(
           "https://jsonplaceholder.typicode.com/" + veri,
           fillTable,
           "json"
         );
-      
       }
+
+      function yeniSayfaimg(yeniimg) {
+        window.open(yeniimg);
+      }
+      // function phtClck(urlgelsin) {}
+      // jQuery(document).ready(function ($) {
+      //   $(".clickable-row").click(function () {
+      //     window.location = $(this).data("href");
+      //   });
+      // });
     </script>
   </head>
   <body>
